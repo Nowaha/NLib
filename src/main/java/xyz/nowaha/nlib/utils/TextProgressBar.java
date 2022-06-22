@@ -12,7 +12,7 @@ public class TextProgressBar {
         return create(progress, width, character, ChatColor.GREEN, ChatColor.RED);
     }
 
-    public static String create(double progress, int width, String character, ChatColor uncompleted, ChatColor completed) {
+    public static String create(double progress, int width, String character, ChatColor completed, ChatColor uncompleted) {
         StringBuilder res = new StringBuilder();
         boolean switched = false;
 
