@@ -78,18 +78,7 @@ public class ItemStackBuilder implements Listener {
     }
 
     public ItemStackBuilder formatLoreList(String key, List<String> insertion) {
-        List<String> oldLore = lore();
-        List<String> newLore = new ArrayList<>(oldLore);
-        for (int i = 0; i < oldLore.size(); i++) {
-            if (oldLore.get(i).toLowerCase().contains(key.toLowerCase())) {
-                newLore.remove(i);
-                newLore.addAll(i, insertion);
-                break;
-            }
-        }
-
-        lore(newLore);
-
+        lore(Formatting.replaceInList(lore(), key, insertion));
         return this;
     }
 

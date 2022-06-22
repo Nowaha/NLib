@@ -1,5 +1,6 @@
 package xyz.nowaha.nlib.utils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +19,21 @@ public class Formatting {
             string = string.replace(first, second == null ? "[undefined]" : second);
         }
         return string;
+    }
+
+    public static List<String> replaceInList(List<String> into, String replace, List<String> with) {
+        List<String> old = into;
+        List<String> newList = new ArrayList(old);
+
+        for (int i = 0; i < old.size(); ++i) {
+            if (old.get(i).toLowerCase().contains(replace.toLowerCase())) {
+                newList.remove(i);
+                newList.addAll(i, with);
+                break;
+            }
+        }
+
+        return newList;
     }
 
 }
