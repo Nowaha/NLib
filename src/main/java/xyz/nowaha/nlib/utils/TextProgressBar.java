@@ -9,12 +9,15 @@ public class TextProgressBar {
     }
 
     public static String create(double progress, int width, String character) {
-        return create(progress, width, character, ChatColor.GREEN, ChatColor.RED);
+        return create(progress, width, character, String.valueOf(ChatColor.GREEN), String.valueOf(ChatColor.RED));
     }
 
-    public static String create(double progress, int width, String character, ChatColor completed, ChatColor uncompleted) {
+    public static String create(double progress, int width, String character, String completed, String uncompleted) {
         StringBuilder res = new StringBuilder();
         boolean switched = false;
+
+        completed = Coloring.color(completed);
+        uncompleted = Coloring.color(uncompleted);
 
         res.append(completed);
         for (int i = 0; i < width; i++) {
