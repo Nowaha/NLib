@@ -55,7 +55,7 @@ publishing {
             pom {
                 groupId = 'xyz.nowaha'
                 artifactId = 'nlib'
-                version = "1.0.2"
+                version = "1.0.3"
             }
         }
     }
