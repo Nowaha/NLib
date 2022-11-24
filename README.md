@@ -4,6 +4,7 @@ The Java part of a Java & Kotlin library made for Spigot and any of the forks of
 This library contains a bunch of utilities for commonly performed actions, including but not limited to: 
 - A simple ItemStack builder which allows you to easily create items with all of the properties you could ever wish to add.
 - A nice library for the handling of files, including a basic file and a messages file which lets you load messages and color them and replace any placeholders you want.
+  - There is also a type that allows you to just create a class with static variables, and load these in keeping the current values as the defaults (reflection magic)
 - Coloring of messages (including hex codes)
 - Generate dynamic progress bars in chat
 - Deal with roman numerals
