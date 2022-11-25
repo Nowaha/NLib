@@ -23,6 +23,8 @@ public class RomanNumerals {
     }
 
     public static String toRoman(int number) {
+        if (number == 0) return "0";
+        if (number < 0) throw new IllegalArgumentException("Number must be >= 0.");
         int l = map.floorKey(number);
         if (number == l) {
             return map.get(number);
