@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'xyz.nowaha'
-version = '1.0.5'
+version = '1.0.6'
 
 repositories {
     mavenCentral()
@@ -63,7 +63,7 @@ publishing {
             pom {
                 groupId = 'xyz.nowaha'
                 artifactId = 'nlib'
-                version = "1.0.5"
+                version = "1.0.6"
             }
         }
     }

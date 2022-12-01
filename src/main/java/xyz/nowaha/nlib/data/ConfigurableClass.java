@@ -20,7 +20,7 @@ public class ConfigurableClass {
     }
 
     public void saveAndLoad() {
-        prefix += ".";
+        var applicablePrefix = prefix.length() > 0 ? (prefix + ".") : "";
 
         try {
             Iterator<Field> iterator = Arrays.stream(this.getClass().getDeclaredFields()).iterator();
@@ -30,7 +30,7 @@ public class ConfigurableClass {
                 if (!Modifier.isStatic(field.getModifiers()) || !Modifier.isPublic(field.getModifiers()))
                     continue;
 
-                String fieldAsPath = prefix + field.getName().toLowerCase().replace("__", ".");
+                String fieldAsPath = applicablePrefix + field.getName().toLowerCase().replace("__", ".");
 
                 if (!file.isSet(fieldAsPath)) {
                     Object toSave = field.get(null);
