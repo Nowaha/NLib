@@ -11,15 +11,13 @@ import java.util.Objects;
 
 public class ConfigurableClass {
 
-    private FileConfiguration file;
     private String prefix;
 
-    public ConfigurableClass(FileConfiguration file, String prefix) {
-        this.file = file;
+    public ConfigurableClass(String prefix) {
         this.prefix = prefix;
     }
 
-    public void saveAndLoad() {
+    public void saveAndLoad(FileConfiguration file) {
         var applicablePrefix = prefix.length() > 0 ? (prefix + ".") : "";
 
         try {
@@ -27,7 +25,7 @@ public class ConfigurableClass {
             while (iterator.hasNext()) {
                 Field field = iterator.next();
 
-                if (!Modifier.isStatic(field.getModifiers()) || !Modifier.isPublic(field.getModifiers()))
+                if (!Modifier.isStatic(field.getModifiers()) || !Modifier.isPublic(field.getModifiers()) || Modifier.isFinal(field.getModifiers()))
                     continue;
 
                 String fieldAsPath = applicablePrefix + field.getName().toLowerCase().replace("__", ".");
