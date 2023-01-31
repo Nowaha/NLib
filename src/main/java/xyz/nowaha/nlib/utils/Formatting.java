@@ -26,9 +26,10 @@ public class Formatting {
         List<String> newList = new ArrayList(old);
 
         for (int i = 0; i < old.size(); ++i) {
-            if (old.get(i).toLowerCase().contains(replace.toLowerCase())) {
+            String oldLine = old.get(i);
+            if (oldLine.toLowerCase().contains(replace.toLowerCase())) {
                 newList.remove(i);
-                newList.addAll(i, with);
+                newList.addAll(i, with.stream().map((String it) -> oldLine.replace(replace, it)).toList());
                 break;
             }
         }
