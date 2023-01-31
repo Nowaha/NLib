@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'xyz.nowaha'
-version = '1.0.6'
+version = '1.0.7'
 
 repositories {
     mavenCentral()
@@ -25,7 +25,6 @@ test {
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT'
     testImplementation 'org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT'
-
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 }
@@ -63,7 +62,7 @@ publishing {
             pom {
                 groupId = 'xyz.nowaha'
                 artifactId = 'nlib'
-                version = "1.0.6"
+                version = "1.0.7"
             }
         }
     }
