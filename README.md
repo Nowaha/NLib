@@ -12,9 +12,7 @@ This library contains a bunch of utilities for commonly performed actions, inclu
 ## Documentation
 *I am planning to release JavaDocs sometime soon.*
 
-## Installation
-I publish the latest build to [GitHub packages](https://github.com/Nowaha/NLib/packages/1496470).
-
+## Dependency
 You can add it as a dependency by putting the following in your `build.gradle` file:
 ```groovy
 repositories {
