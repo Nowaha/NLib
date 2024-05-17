@@ -9,7 +9,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -30,10 +29,9 @@ jobs:
       with:
         arguments: build
 
-    - name: Publish to GitHub Packages
+    - name: Publish to Nexus
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: publish
       env:
-        GITHUB_USERNAME: ${{ github.actor }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
