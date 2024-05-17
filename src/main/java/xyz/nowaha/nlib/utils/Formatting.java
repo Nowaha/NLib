@@ -15,8 +15,8 @@ public class Formatting {
     public static String format(String string, String... variables) {
         for (int i = 0; i < variables.length; i += 2) {
             String first = variables[i];
-            String second = variables[i + 1];
-            string = string.replace(first, second == null ? "[undefined]" : second);
+            String second = i + 1 < variables.length ? variables[i + 1] : "[undefined]";
+            string = string.replace(first, second);
         }
         return string;
     }
